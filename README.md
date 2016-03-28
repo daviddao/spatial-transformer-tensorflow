@@ -12,7 +12,7 @@ Implements a spatial transformer layer as described in [1].
 Based on [2] and edited for Tensorflow.
 
 #### How to use
-```
+```python
 transformer(U, theta, downsample_factor=1)
 ```
     
