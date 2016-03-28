@@ -1,17 +1,21 @@
 # Spatial Transformer Network
 
-Tensorflow Implementation of Spatial Transformer Networks as described in [1] and based on [2].
+Spatial Transformer Networks [1] allow us to attend specific regions of interest of an image while, at the same time, provide invariance to shapes and sizes of the resulting image patches. This can improve the accuracy of the CNN and discover meaningful discriminative regions of an image. 
+
+<div align="center">
+  <img width="600px" src="http://i.imgur.com/ExGDVul.png"><br><br>
+</div>
+
+### API 
+
+A Spatial Transformer Network based on [2] and implemented in Tensorflow.
+
+#### How to use
 
 <div align="center">
   <img src="http://i.imgur.com/gfqLV3f.png"><br><br>
 </div>
 
-### API 
-    
-Implements a spatial transformer layer as described in [1].
-Based on [2] and edited for Tensorflow.
-
-#### How to use
 ```python
 transformer(U, theta, downsample_factor=1)
 ```
@@ -42,6 +46,14 @@ identity = np.array([[1., 0., 0.],
 identity = identity.flatten()
 theta = tf.Variable(initial_value=identity)
 ```        
+
+#### Experiments
+
+<div align="center">
+  <img width="600px" src="./cluttered_mnist.png"><br><br>
+</div>
+
+We used cluttered MNIST. Left columns are the input images, right columns are the attended parts of the image by an STN.
 
 ### References
 
