@@ -1,5 +1,7 @@
 # Spatial Transformer Network
 
+A more recent and maintained version can be found in [Tensorflow/models](https://github.com/tensorflow/models/tree/master/transformer).
+
 Spatial Transformer Networks [1] allow us to attend specific regions of interest of an image while, at the same time, provide invariance to shapes and sizes of the resulting image patches. This can improve the accuracy of the CNN and discover meaningful discriminative regions of an image. 
 
 <div align="center">
