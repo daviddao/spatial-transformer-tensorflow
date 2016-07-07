@@ -1,8 +1,6 @@
 # Spatial Transformer Network
 
-A more recent and maintained version can be found in [Tensorflow/models](https://github.com/tensorflow/models/tree/master/transformer).
-
-Spatial Transformer Networks [1] allow us to attend specific regions of interest of an image while, at the same time, provide invariance to shapes and sizes of the resulting image patches. This can improve the accuracy of the CNN and discover meaningful discriminative regions of an image. 
+The Spatial Transformer Network [1] allows the spatial manipulation of data within the network.
 
 <div align="center">
   <img width="600px" src="http://i.imgur.com/ExGDVul.png"><br><br>
@@ -10,7 +8,7 @@ Spatial Transformer Networks [1] allow us to attend specific regions of interest
 
 ### API 
 
-A Spatial Transformer Network based on [2] and implemented in Tensorflow.
+A Spatial Transformer Network implemented in Tensorflow 0.7 and based on [2].
 
 #### How to use
 
@@ -19,7 +17,7 @@ A Spatial Transformer Network based on [2] and implemented in Tensorflow.
 </div>
 
 ```python
-transformer(U, theta, downsample_factor=1)
+transformer(U, theta, out_size)
 ```
     
 #### Parameters
@@ -30,13 +28,8 @@ transformer(U, theta, downsample_factor=1)
     theta: float   
         The output of the
         localisation network should be [num_batch, 6].
-    downsample_factor : float
-        A value of 1 will keep the original size of the image
-        Values larger than 1 will downsample the image. 
-        Values below 1 will upsample the image
-        example image: height = 100, width = 200
-        downsample_factor = 2
-        output image will then be 50, 100
+    out_size: tuple of two ints
+        The size of the output of the network
         
     
 #### Notes
@@ -52,10 +45,12 @@ theta = tf.Variable(initial_value=identity)
 #### Experiments
 
 <div align="center">
-  <img width="600px" src="./cluttered_mnist.png"><br><br>
+  <img width="600px" src="http://i.imgur.com/HtCBYk2.png"><br><br>
 </div>
 
-We used cluttered MNIST. Left columns are the input images, right columns are the attended parts of the image by an STN.
+We used cluttered MNIST. Left column are the input images, right are the attended parts of the image by an STN.
+
+All experiments were run in Tensorflow 0.7.
 
 ### References
 
