@@ -1,5 +1,7 @@
 # Spatial Transformer Network
 
+[![](https://tinyurl.com/greenai-pledge)](https://github.com/daviddao/green-ai)
+
 The Spatial Transformer Network [1] allows the spatial manipulation of data within the network.
 
 <div align="center">
